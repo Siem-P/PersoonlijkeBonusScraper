@@ -1,6 +1,5 @@
 // Importeer express uit de node_modules map
 import express from "express"
-
 import indexRoute from "./routes/index.js"
 
 // Maak een nieuwe express app
