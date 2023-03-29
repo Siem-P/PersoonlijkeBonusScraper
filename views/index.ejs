@@ -1,6 +1,13 @@
 <%- include('./partials/head') %>
 
 
+<section class="f1-driver--wrapper">
+    <% items.forEach(item => { %>
+        <article class="driver">
+            <h2 class="name"><%= item.firstName %></h2>
+        </article>
+    <% }) %>
+</section>
 
 
 <%- include('./partials/foot') %>

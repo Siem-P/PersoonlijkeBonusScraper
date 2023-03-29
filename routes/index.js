@@ -14,8 +14,6 @@ async function getFormulaOneDrivers() {
     const body = await response.text()
 
     const $ = cheerio.load(body)
-
-    const items = []
   
     // Selecting Each col-12 class name and iterate through the list
     $('.listing-items--wrapper > .row > .col-12').map((i, el) => {
@@ -36,7 +34,6 @@ async function getFormulaOneDrivers() {
       })
     })
 
-    // console.log(items[0])
 
     // items.forEach(item => {
     //   console.log(item)
