@@ -32,20 +32,14 @@ async function getFormulaOneDrivers() {
         team,
         photo
       })
+
     })
 
-
-    // items.forEach(item => {
-    //   console.log(item)
-    // })
     return items
   } catch (error) {
     console.log(error)
   }
 }
-
-
-
 
 // Index page
 index.get('/', (request, response) => {
