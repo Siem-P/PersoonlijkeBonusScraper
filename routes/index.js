@@ -45,13 +45,13 @@ async function getFormulaOneDrivers() {
 }
 
 
-// Run function
-getFormulaOneDrivers(items)
+
 
 // Index page
 index.get('/', (request, response) => {
-  
-  console.log(items)
+  // Run function
+  getFormulaOneDrivers(items)
+  // console.log(items)
   response.render('index', items)
 })
 
