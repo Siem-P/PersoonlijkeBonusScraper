@@ -3,10 +3,12 @@ import * as cheerio from 'cheerio'
 import fetch from 'node-fetch'
 
 const index = express.Router()
-const items = []
+let items = []
 
 // Function starts here
 async function getFormulaOneDrivers() {
+  items = []
+  
   try {
     // Fetch data from URL and store the response into a const
     const response = await fetch('https://www.formula1.com/en/drivers.html')
@@ -34,7 +36,6 @@ async function getFormulaOneDrivers() {
       })
 
     })
-
     return items
   } catch (error) {
     console.log(error)
@@ -42,11 +43,11 @@ async function getFormulaOneDrivers() {
 }
 
 // Index page
-index.get('/', (request, response) => {
+index.get('/', async (request, response) => {
   // Run function
-  getFormulaOneDrivers(items)
-  // console.log(items)
-  response.render('index', items)
+  await getFormulaOneDrivers()
+  console.log(items);
+  response.render('index', {items} )
 })
 
 export default index

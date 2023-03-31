@@ -1,5 +1,17 @@
 <%- include('./partials/head') %>
 
+<section class="driver--wrapper">
+<% items.forEach(item => { %>
+    <article class="drivers">
+        <h2> Rank <%= item.rank %> </h2> 
+        <h3> <%= item.firstName %> <%= item.lastName %></h2>
+        <div> Points <%= item.points %> </div>
+        <div> <%= item.team %> </div>
+        <img src="<%= item.photo %>">
+
+    </article>
+<% }) %>
+</section>
 
 
 <%- include('./partials/foot') %>
