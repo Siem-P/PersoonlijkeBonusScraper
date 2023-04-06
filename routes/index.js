@@ -47,7 +47,7 @@ index.get('/', async (request, response) => {
   // Run function
   await getFormulaOneDrivers()
   console.log(items);
-  response.render('index', {items} )
+response.render('index', {items: items} )
 })
 
 export default index
